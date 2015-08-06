@@ -1,4 +1,5 @@
 # Laravel Alerter - Easy flash alerts for Laravel 5
+
 ## Installation
 Pull in the package using Composer.
 
