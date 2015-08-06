@@ -1,0 +1,20 @@
+{
+	"name": "iamfaiz/laravel-alerter",
+	"authors": [
+        {
+            "name": "Rana Faiz Ahmad",
+            "email": "iamfaizahmed123@gmail.com"
+        }
+    ],
+	"autoload": {
+		"psr-4": {
+			"Alerter\\": "src/Alerter/"
+		}
+	},
+	"require": {
+		"illuminate/support": "5.1.8",
+		"illuminate/session": "5.1.8",
+		"phpunit/phpunit": "^4.7",
+		"mockery/mockery": "^0.9.4"
+	}
+}
