@@ -1,3 +1,5 @@
-<script defer="">
-	toastr.success('<?= $message ?>', '<?= $title ?>');
+<script>
+	window.addEventListener('load', function () {
+		toastr.success('<?= $message ?>', '<?= $title ?>');
+	});
 </script>
