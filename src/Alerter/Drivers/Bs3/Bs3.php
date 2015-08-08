@@ -16,16 +16,25 @@ class Bs3 implements AlertView
 
 	public function success($message, $title)
 	{
-		return $this->engine->render(__DIR__ . '/templates/success.php');
+		return $this->engine->render('Drivers/Bs3/templates/success', [
+			'message' => $message,
+			'title' => $title
+		]);
 	}
 
 	public function info($message, $title)
 	{
-		return $this->engine->render(__DIR__ . '/templates/info.php');
+		return $this->engine->render('Drivers/Bs3/templates/info', [
+			'message' => $message,
+			'title' => $title
+		]);
 	}
 
 	public function error($message, $title)
 	{
-		return $this->engine->render(__DIR__ . '/templates/error.php');
+		return $this->engine->render('Drivers/Bs3/templates/error', [
+			'message' => $message,
+			'title' => $title
+		]);
 	}
 }

@@ -7,6 +7,7 @@ use Alerter\Drivers\Bs3;
 use Alerter\Flashable;
 use Alerter\LaravelFlashable;
 use Illuminate\Support\ServiceProvider;
+use League\Plates\Engine;
 
 class AlerterServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,7 @@ class AlerterServiceProvider extends ServiceProvider
 
 	public function register()
 	{
+		$this->bindPlatesEngine();
 		// Get all the drivers from the configuration file.
 		$allDrivers = $this->app['config']['alerter.all'];
 		// Get the selected driver.
@@ -29,5 +31,12 @@ class AlerterServiceProvider extends ServiceProvider
 		$this->app->bind('Alerter\Flashable', LaravelFlashable::class);
 		// Binding the Alert Facade to the Alerter class.
 		$this->app->bind('laravel-alerter', Alerter::class);
+	}
+
+	protected function bindPlatesEngine()
+	{
+		$this->app->bind(Engine::class, function () {
+			return new Engine(__DIR__);
+		});
 	}
 }

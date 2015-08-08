@@ -1,5 +1,5 @@
 <script>
 	window.addEventListener('load', function () {
-		toastr.info('<?= $message ?>', '<?= $title ?>');
+		toastr.info('<?= $this->e($message) ?>', '<?= $this->e($title) ?>');
 	});
 </script>
