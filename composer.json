@@ -9,15 +9,13 @@
 	"autoload": {
 		"psr-4": {
 			"Alerter\\": "src/Alerter/"
-		},
-		"files": [
-			"src/Alerter/Drivers/functions.php"
-		]
+		}
 	},
 	"require": {
 		"illuminate/support": "5.1.8",
 		"illuminate/session": "5.1.8",
 		"phpunit/phpunit": "^4.7",
-		"mockery/mockery": "^0.9.4"
+		"mockery/mockery": "^0.9.4",
+		"league/plates": "3.*"
 	}
 }

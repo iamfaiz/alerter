@@ -2,8 +2,8 @@
     <div class="alert alert-info">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		<?php if (isset($title)): ?>
-			<strong><?= $title ?></strong>
+			<strong><?= $this->e($title) ?></strong>
 		<?php endif; ?>
-        <?= $message ?>
+        <?= $this->e($message) ?>
     </div>
 <?php endif; ?>
