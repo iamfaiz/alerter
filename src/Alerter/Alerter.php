@@ -39,18 +39,6 @@ class Alerter
 		$this->driver = $driver;
 	}
 
-	// public function initDriver()
-	// {
-	// 	$allDrivers = config('alerter.all');
-
-	// 	$this->driver = App::make(
-	// 		$allDrivers[config('alerter.driver')]
-	// 	);
-
-	// 	if ( ! $this->driver instanceof AlertView)
-	// 		throw new \Exception('The driver specified for the alerter must implement the "Alerter\AlertView" interface.');
-	// }
-
 	/**
 	 * Flash a success message to the session.
 	 *
@@ -95,15 +83,15 @@ class Alerter
 
 		switch ($this->session->get('alerter.type')) {
 			case 'success':
-				$this->driver->success($message, $title);
+				return $this->driver->success($message, $title);
 				break;
 
 			case 'info':
-				$this->driver->info($message, $title);
+				return $this->driver->info($message, $title);
 				break;
 
 			case 'error':
-				$this->driver->error($message, $title);
+				return $this->driver->error($message, $title);
 				break;
 		}
 	}

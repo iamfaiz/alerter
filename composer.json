@@ -15,6 +15,7 @@
 		"illuminate/support": "5.1.8",
 		"illuminate/session": "5.1.8",
 		"phpunit/phpunit": "^4.7",
-		"mockery/mockery": "^0.9.4"
+		"mockery/mockery": "^0.9.4",
+		"twig/twig": "^1.19"
 	}
 }

@@ -3,21 +3,27 @@
 namespace Alerter\Drivers\Bs3;
 
 use Alerter\AlertView;
+use Alerter\Drivers\Template;
 
 class Bs3 implements AlertView
 {
+	public function __construct(Template $template)
+	{
+		$this->template = $template;
+	}
+
 	public function success($message, $title)
 	{
-		include(__DIR__ . '/templates/success.php');
+		return $this->template->render('Bs3/templates/success.php');
 	}
 
 	public function info($message, $title)
 	{
-		include(__DIR__ . '/templates/info.php');
+		return $this->template->render('Bs3/templates/info.php');
 	}
 
 	public function error($message, $title)
 	{
-		include(__DIR__ . '/templates/error.php');
+		return $this->template->render('Bs3/templates/error.php');
 	}
 }
